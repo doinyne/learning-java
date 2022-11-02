@@ -4,7 +4,7 @@ public class Decimals {
         System.out.println("In 2020, " + percentage + "% of the world liked potatoes!");
 
         double divident = 25;
-        double divisor = 2;
+        int divisor = 2;
         System.out.println(divident/divisor);
     }
 }
