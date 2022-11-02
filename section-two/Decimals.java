@@ -5,6 +5,6 @@ public class Decimals {
 
         double divident = 25;
         int divisor = 2;
-        System.out.println(divident/divisor);
+        System.out.println(divident + " divided by " + divisor + " = " + divident/divisor);
     }
 }
