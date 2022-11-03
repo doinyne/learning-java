@@ -19,5 +19,8 @@ public class Survey {
 
         System.out.println("How many times a week do you buy fast food?");
         int foodAmount = scan.nextInt();
+
+        scan.close();
     }
 }
+d
