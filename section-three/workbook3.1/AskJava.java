@@ -17,6 +17,6 @@ public class AskJava {
 
         System.out.println("Me: Hi Java, will my friend be happy?");
         System.out.println("Java: " + friendHappy.equals(friendSad) + "\n");
-
+    
     }   
 }
