@@ -57,11 +57,11 @@ public class Quiz {
         System.out.println("\ta) Ron Wealsey" + "\n\tb) Hermione Granger" + "\n\tc) Draco Malfoy");
         String answer4 = scan.nextLine();
 
-        if(answer4.equals("Ron Wealsey")) {
+        if(answer4.equals("Ron Wealsey") || answer4.equals("Hermione Granger")) {
             score += 5;
-        } else if(answer4.equals("a")) {
+        } else if(answer4.equals("a") || answer4.equals("b")) {
             score += 5;
-        } else if(answer4.equals("ron wealsey")) {
+        } else if(answer4.equals("ron wealsey") || answer4.equals("hermione granger")) {
             score += 5;
         } else {
             score += 0;
