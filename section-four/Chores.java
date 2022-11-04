@@ -1,6 +1,8 @@
 public class Chores {
     public static void main(String[] args) {
         singChores();
+        singChores();
+        singChores();
     }
 
     public static void singChores() {
