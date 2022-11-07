@@ -1,6 +1,6 @@
 public class Tip {
     public static void main(String[] args) {
-        totalTip(53.50);
+        System.out.println("$" + totalTip(53.50)); ;
     }
     
     public static double totalTip(double bill) {
