@@ -1,15 +1,11 @@
 public class ReturnValues {
     public static void main(String[] args) {
         double area1 = calculateArea(2.3, 3.6);
-        double area2 = calculateArea(1.6, 2.4);
-        double area3 = calculateArea(2.6, 4.2);
+        printArea(2.3, 3.6, area1);
 
         calculateArea(-5, 2.6);
 
         String englishExplanation = explainArea("English");
-        String frenchExplanation = explainArea("French");
-        String spanishExplanation = explainArea("Spanish");
-        String italianExplanation = explainArea("Italian");
 
     }
 
@@ -29,5 +25,9 @@ public class ReturnValues {
             case "Spanish": return "area es igual a largo * ancho";
             default: return "Language not available";
         }
+    }
+
+    public static void printArea(double length, double width, double area) {
+        System.out.println("A rectanlge has a length of " + length + " a width of " + width + " and an area of " + area);
     }
 }
