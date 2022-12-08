@@ -18,7 +18,9 @@ public class RockPaperScissors {
 
     System.out.println("You chose: " + userWeapon);
     System.out.println("The computer chose: " + computerChoice());
-    
+
+    results(userWeapon, computerChoice());
+
     scan.close();
   }
 
@@ -36,5 +38,26 @@ public class RockPaperScissors {
       computerWeapon += "scissors";
     }
     return computerWeapon;
+  }
+
+  public static void results(String userWeapon, String computerChoice) {
+    if(userWeapon == "rock" && computerChoice == "scissors") {
+      System.out.println("You win!");
+    } else if (userWeapon == "paper" && computerChoice == "rock") {
+      System.out.println("You win!");
+    } else if (userWeapon == "scissors" && computerChoice == "paper") {
+      System.out.println("You win!");
+    } else if (computerChoice == "rock" && userWeapon == "scissors") {
+      System.out.println("Computer wins!");
+    } else if (computerChoice == "paper" && userWeapon == "rock") {
+      System.out.println("Computer wins!");
+    } else if (computerChoice == "scissors" && userWeapon == "paper") {
+      System.out.println("Computer wins!");
+    } else if (userWeapon == computerChoice){
+      System.out.println("It's a draw!");
+    } else {
+      System.out.println("Invaid option");
+      System.exit(0);
+    }
   }
 }
