@@ -17,13 +17,13 @@ public class RockPaperScissors {
     }
 
     
-
+    String computerWeapon = computerChoice();
     String userWeapon = scan.nextLine();
 
     System.out.println("You chose: " + userWeapon);
-    System.out.println("The computer chose: " + computerChoice());
-
-    results(userWeapon, computerChoice());
+    System.out.println("The computer chose: " + computerChoice());    
+    String result = result(userWeapon, computerWeapon);
+    System.out.println(result); 
 
     scan.close();
   }
@@ -44,24 +44,26 @@ public class RockPaperScissors {
     return computerWeapon;
   }
 
-  public static void results(String userWeapon, String computerChoice) {
+  public static String result(String userWeapon, String computerChoice) {
+    String result = "";
     if(userWeapon.equals("rock") && computerChoice.equals("scissors")) {
-      System.out.println("You win!");
+      result = "You win!";
+    } else if (userWeapon.equals("rock") && computerChoice.equals("paper")) {
+      result = "Computer wins!";
     } else if (userWeapon.equals("paper") && computerChoice.equals("rock")) {
-      System.out.println("You win!");
-    } else if (userWeapon.equals("scissors") && computerChoice.equals("paper")) {
-      System.out.println("You win!");
-    } else if (computerChoice.equals("rock") && userWeapon.equals("scissors")) {
-      System.out.println("Computer wins!");
-    } else if (computerChoice.equals("paper") && userWeapon.equals("rock")) {
-      System.out.println("Computer wins!");
+      result = "You win!";
+    } else if (userWeapon.equals("paper") && computerChoice.equals("scissors")) {
+      result = "Computer wins!";
     } else if (computerChoice.equals("scissors") && userWeapon.equals("paper")) {
-      System.out.println("Computer wins!");
+      result = "You win!";
+    } else if (computerChoice.equals("scissors") && userWeapon.equals("rock")) {
+      result = "Computer wins!";
     } else if (userWeapon == computerChoice){
-      System.out.println("It's a draw!");
+      result = "Its a draw";
     } else {
       System.out.println("Invaid option");
       System.exit(0);
     }
+    return result;
   }
 }
