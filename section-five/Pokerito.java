@@ -2,7 +2,11 @@ import java.util.Scanner;
 
 public class Pokerito {
     public static void main(String[] args) {
-        System.out.println(randomNumber());
+        String computerCard = randomNumber();
+        System.out.println("Computer card: \n" + computerCard);
+
+        String playerCard = randomNumber();
+        System.out.println("Player card: \n" + playerCard);
     }
 
     public static String randomNumber() {
