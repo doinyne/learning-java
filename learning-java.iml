@@ -2,9 +2,26 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
+    <content url="file://$MODULE_DIR$/section-five">
+      <sourceFolder url="file://$MODULE_DIR$/section-five" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/section-four">
       <sourceFolder url="file://$MODULE_DIR$/section-four" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/section-one">
       <sourceFolder url="file://$MODULE_DIR$/section-one" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/section-three">
+      <sourceFolder url="file://$MODULE_DIR$/section-three/challenge3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/section-three/workbook3.1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/section-three/workbook3.2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/section-three/workbook3.3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/section-three/workbook3.4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/section-three/workbook3.5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/section-three/workbook3.6" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/section-three/workbook3.7" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/section-two">
       <sourceFolder url="file://$MODULE_DIR$/section-two" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
