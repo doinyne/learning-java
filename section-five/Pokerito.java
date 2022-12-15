@@ -14,9 +14,7 @@ public class Pokerito {
         scan.nextLine(); // if statement for enter once next function has been created
 
         String dealerCards = randomNumber() + randomNumber() + randomNumber() + randomNumber() + randomNumber();
-        System.out.println(dealerCards);
-
-//        System.out.println("Dealers cards: \n" + dealerCards);
+        System.out.println("Dealers cards: \n" + dealerCards);
 
         scan.close();
     }
@@ -135,6 +133,10 @@ public class Pokerito {
             break;
         }
         return randomCard;
+    }
+
+    public static int points(int computerCard, int playerCard, int ) {
+
     }
 
 }
