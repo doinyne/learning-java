@@ -135,8 +135,4 @@ public class Pokerito {
         return randomCard;
     }
 
-    public static int points(int computerCard, int playerCard, int ) {
-
-    }
-
 }
