@@ -2,11 +2,23 @@ import java.util.Scanner;
 
 public class Pokerito {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
         String computerCard = randomNumber();
         System.out.println("Computer card: \n" + computerCard);
 
         String playerCard = randomNumber();
         System.out.println("Player card: \n" + playerCard);
+
+        System.out.println("Now the dealer will deal 5 cards. Press enter to continue");
+        scan.nextLine(); // if statement for enter once next function has been created
+
+        String dealerCards = randomNumber() + randomNumber() + randomNumber() + randomNumber() + randomNumber();
+        System.out.println(dealerCards);
+
+//        System.out.println("Dealers cards: \n" + dealerCards);
+
+        scan.close();
     }
 
     public static String randomNumber() {
@@ -124,4 +136,5 @@ public class Pokerito {
         }
         return randomCard;
     }
+
 }
