@@ -13,13 +13,20 @@ public class Pokerito {
         System.out.println("Now the dealer will deal 5 cards. Press enter to continue");
         scan.nextLine(); // if statement for enter once next function has been created
 
-
         String dealerCard1 = randomNumber();
+        System.out.println("Card 1: \n" + dealerCard1);
+        scan.nextLine();
         String dealerCard2 = randomNumber();
+        System.out.println("Card 2: \n" + dealerCard2);
+        scan.nextLine();
         String dealerCard3 = randomNumber();
+        System.out.println("Card 3: \n" + dealerCard3);
+        scan.nextLine();
         String dealerCard4 = randomNumber();
+        System.out.println("Card 4: \n" + dealerCard4);
+        scan.nextLine();
         String dealerCard5 = randomNumber();
-        System.out.println("Dealers cards: \n" + dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4 + dealerCard5);
+        System.out.println("Card 5: \n" + dealerCard5);
 
         int playerCardPoints = 0;
         int computerCardPoints = 0;
@@ -41,8 +48,17 @@ public class Pokerito {
             computerCardPoints += 1;
         }
 
-        System.out.println("Player points: " + playerCardPoints);
-        System.out.println("Computer points: " + computerCardPoints);
+        System.out.println("Player number of matches: " + playerCardPoints);
+        System.out.println("Computer number of matches: " + computerCardPoints);
+
+        if(playerCardPoints > computerCardPoints) {
+            System.out.println("Player wins!");
+        } else if(playerCardPoints == computerCardPoints) {
+            System.out.println("Everybody wins!");
+        } else {
+            System.out.println("Computer wins!");
+        }
+
         scan.close();
     }
 
