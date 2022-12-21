@@ -13,8 +13,19 @@ public class Pokerito {
         System.out.println("Now the dealer will deal 5 cards. Press enter to continue");
         scan.nextLine(); // if statement for enter once next function has been created
 
-        String dealerCards = randomNumber() + randomNumber() + randomNumber() + randomNumber() + randomNumber();
-        System.out.println("Dealers cards: \n" + dealerCards);
+
+        String[] dealerCards = {randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber()};
+        System.out.println(dealerCards[1]);
+
+        int playerCardPoints = 0;
+        int computerCardPoints = 0;
+
+        for(int i = 0; i < 4; i++) {
+            if(playerCard.equals(dealerCards[0])) {
+                playerCardPoints += 1;
+            }
+        }
+//        System.out.println("Dealers cards: \n" + dealerCards());
 
         scan.close();
     }
@@ -134,5 +145,7 @@ public class Pokerito {
         }
         return randomCard;
     }
+
+
 
 }
