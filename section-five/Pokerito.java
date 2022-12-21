@@ -14,19 +14,35 @@ public class Pokerito {
         scan.nextLine(); // if statement for enter once next function has been created
 
 
-        String[] dealerCards = {randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber()};
-        System.out.println(dealerCards[1]);
+        String dealerCard1 = randomNumber();
+        String dealerCard2 = randomNumber();
+        String dealerCard3 = randomNumber();
+        String dealerCard4 = randomNumber();
+        String dealerCard5 = randomNumber();
+        System.out.println("Dealers cards: \n" + dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4 + dealerCard5);
 
         int playerCardPoints = 0;
         int computerCardPoints = 0;
 
-        for(int i = 0; i < 4; i++) {
-            if(playerCard.equals(dealerCards[0])) {
-                playerCardPoints += 1;
-            }
+        if(playerCard.equals(dealerCard1) ||
+                playerCard.equals(dealerCard2) ||
+                playerCard.equals(dealerCard3) ||
+                playerCard.equals(dealerCard4) ||
+                playerCard.equals(dealerCard5))
+        {
+            playerCardPoints += 1;
         }
-//        System.out.println("Dealers cards: \n" + dealerCards());
+        if(computerCard.equals(dealerCard1) ||
+                computerCard.equals(dealerCard2) ||
+                computerCard.equals(dealerCard3) ||
+                computerCard.equals(dealerCard4) ||
+                computerCard.equals(dealerCard5))
+        {
+            computerCardPoints += 1;
+        }
 
+        System.out.println("Player points: " + playerCardPoints);
+        System.out.println("Computer points: " + computerCardPoints);
         scan.close();
     }
 
