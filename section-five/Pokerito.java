@@ -4,48 +4,26 @@ public class Pokerito {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        String computerCard = randomNumber();
-        System.out.println("Computer card: \n" + computerCard);
-
-        String playerCard = randomNumber();
-        System.out.println("Player card: \n" + playerCard);
-
-        System.out.println("Now the dealer will deal 5 cards. Press enter to continue");
-        scan.nextLine(); // if statement for enter once next function has been created
-
-        String dealerCard1 = randomNumber();
-        System.out.println("Card 1: \n" + dealerCard1);
-        scan.nextLine();
-        String dealerCard2 = randomNumber();
-        System.out.println("Card 2: \n" + dealerCard2);
-        scan.nextLine();
-        String dealerCard3 = randomNumber();
-        System.out.println("Card 3: \n" + dealerCard3);
-        scan.nextLine();
-        String dealerCard4 = randomNumber();
-        System.out.println("Card 4: \n" + dealerCard4);
-        scan.nextLine();
-        String dealerCard5 = randomNumber();
-        System.out.println("Card 5: \n" + dealerCard5);
-
+        String computerCard = randomCards();
+        String playerCard = randomCards();
         int playerCardPoints = 0;
         int computerCardPoints = 0;
 
-        if(playerCard.equals(dealerCard1) ||
-                playerCard.equals(dealerCard2) ||
-                playerCard.equals(dealerCard3) ||
-                playerCard.equals(dealerCard4) ||
-                playerCard.equals(dealerCard5))
-        {
-            playerCardPoints += 1;
-        }
-        if(computerCard.equals(dealerCard1) ||
-                computerCard.equals(dealerCard2) ||
-                computerCard.equals(dealerCard3) ||
-                computerCard.equals(dealerCard4) ||
-                computerCard.equals(dealerCard5))
-        {
-            computerCardPoints += 1;
+        System.out.println("Computer card: \n" + computerCard);
+        System.out.println("Player card: \n" + playerCard);
+        System.out.println("Now the dealer will deal 5 cards. Press enter to continue");
+
+        for(int i = 1; i <= 5; i++) {
+            scan.nextLine();
+            String dealerCard = randomCards();
+            System.out.println("Dealer card: " + i + "\n" + dealerCard);
+            if(playerCard.equals(dealerCard)) {
+                playerCardPoints += 1;
+            }
+            if(computerCard.equals(dealerCard))
+            {
+                computerCardPoints += 1;
+            }
         }
 
         System.out.println("Player number of matches: " + playerCardPoints);
@@ -62,119 +40,118 @@ public class Pokerito {
         scan.close();
     }
 
-    public static String randomNumber() {
+    public static String randomCards() {
         double randomDouble = Math.random() * 13 + 1;
         int randomInt = (int)randomDouble;
 
-        String randomCard;
+        String randomCard = switch (randomInt) {
+            case 1 -> """
+                       _____
+                      |A _  |
+                      | ( ) |
+                      |(_'_)|
+                      |  |  |
+                      |____V|
+                    """;
+            case 2 -> """
+                       _____
+                      |2    |
+                      |  o  |
+                      |     |
+                      |  o  |
+                      |____Z|
+                    """;
+            case 3 -> """
+                       _____
+                      |3    |
+                      | o o |
+                      |     |
+                      |  o  |
+                      |____E|
+                    """;
+            case 4 -> """
+                       _____
+                      |4    |
+                      | o o |
+                      |     |
+                      | o o |
+                      |____h|
+                    """;
+            case 5 -> """
+                       _____\s
+                      |5    |
+                      | o o |
+                      |  o  |
+                      | o o |
+                      |____S|
+                    """;
+            case 6 -> """
+                       _____\s
+                      |6    |
+                      | o o |
+                      | o o |
+                      | o o |
+                      |____6|
+                    """;
+            case 7 -> """
+                       _____\s
+                      |7    |
+                      | o o |
+                      |o o o|
+                      | o o |
+                      |____7|
+                    """;
+            case 8 -> """
+                       _____\s
+                      |8    |
+                      |o o o|
+                      | o o |
+                      |o o o|
+                      |____8|
+                    """;
+            case 9 -> """
+                       _____\s
+                      |9    |
+                      |o o o|
+                      |o o o|
+                      |o o o|
+                      |____9|
+                    """;
+            case 10 -> """
+                       _____\s
+                      |10  o|
+                      |o o o|
+                      |o o o|
+                      |o o o|
+                      |___10|
+                    """;
+            case 11 -> """
+                       _____\s
+                      |J  ww|
+                      | o {)|
+                      |o o% |
+                      | | % |
+                      |__%%[|
+                    """;
+            case 12 -> """
+                       _____
+                      |Q  ww|
+                      | o {(|
+                      |o o%%|
+                      | |%%%|
+                      |_%%%O|
+                    """;
+            case 13 -> """
+                       _____
+                      |K  WW|
+                      | o {)|
+                      |o o%%|
+                      | |%%%|
+                      |_%%%>|
+                    """;
+            default -> "Sorry error";
+        };
 
-        switch(randomInt) {
-            case 1: randomCard = "   _____\n" +
-                        "  |A _  |\n" +
-                        "  | ( ) |\n" +
-                        "  |(_'_)|\n" +
-                        "  |  |  |\n" +
-                        "  |____V|\n";
-                break;
-            case 2:
-                randomCard = "   _____\n" +
-                        "  |2    |\n" +
-                        "  |  o  |\n" +
-                        "  |     |\n" +
-                        "  |  o  |\n" +
-                        "  |____Z|\n";
-                break;
-            case 3:
-                randomCard = "   _____\n" +
-                        "  |3    |\n" +
-                        "  | o o |\n" +
-                        "  |     |\n" +
-                        "  |  o  |\n" +
-                        "  |____E|\n";
-                break;
-            case 4:
-                randomCard = "   _____\n" +
-                        "  |4    |\n" +
-                        "  | o o |\n" +
-                        "  |     |\n" +
-                        "  | o o |\n" +
-                        "  |____h|\n";
-                break;
-            case 5:
-                randomCard = "   _____ \n" +
-                        "  |5    |\n" +
-                        "  | o o |\n" +
-                        "  |  o  |\n" +
-                        "  | o o |\n" +
-                        "  |____S|\n";
-                break;
-            case 6:
-                randomCard = "   _____ \n" +
-                        "  |6    |\n" +
-                        "  | o o |\n" +
-                        "  | o o |\n" +
-                        "  | o o |\n" +
-                        "  |____6|\n";
-                break;
-            case 7:
-                randomCard = "   _____ \n" +
-                        "  |7    |\n" +
-                        "  | o o |\n" +
-                        "  |o o o|\n" +
-                        "  | o o |\n" +
-                        "  |____7|\n";
-                break;
-            case 8:
-                randomCard = "   _____ \n" +
-                        "  |8    |\n" +
-                        "  |o o o|\n" +
-                        "  | o o |\n" +
-                        "  |o o o|\n" +
-                        "  |____8|\n";
-                break;
-            case 9:
-                randomCard = "   _____ \n" +
-                        "  |9    |\n" +
-                        "  |o o o|\n" +
-                        "  |o o o|\n" +
-                        "  |o o o|\n" +
-                        "  |____9|\n";
-                break;
-            case 10:
-                randomCard = "   _____ \n" +
-                        "  |10  o|\n" +
-                        "  |o o o|\n" +
-                        "  |o o o|\n" +
-                        "  |o o o|\n" +
-                        "  |___10|\n";
-                break;
-            case 11:
-                randomCard = "   _____ \n" +
-                        "  |J  ww|\n" +
-                        "  | o {)|\n" +
-                        "  |o o% |\n" +
-                        "  | | % |\n" +
-                        "  |__%%[|\n";
-                break;
-            case 12:
-                randomCard = "   _____\n" +
-                        "  |Q  ww|\n" +
-                        "  | o {(|\n" +
-                        "  |o o%%|\n" +
-                        "  | |%%%|\n" +
-                        "  |_%%%O|\n";
-                break;
-            case 13:
-                randomCard = "   _____\n" +
-                        "  |K  WW|\n" +
-                        "  | o {)|\n" +
-                        "  |o o%%|\n" +
-                        "  | |%%%|\n" +
-                        "  |_%%%>|\n";
-                break;
-            default: randomCard = "Sorry error";
-            break;
-        }
         return randomCard;
     }
 
