@@ -44,7 +44,7 @@ public class Pokerito {
         double randomDouble = Math.random() * 13 + 1;
         int randomInt = (int)randomDouble;
 
-        String randomCard = switch (randomInt) {
+        return switch (randomInt) {
             case 1 -> """
                        _____
                       |A _  |
@@ -151,8 +151,6 @@ public class Pokerito {
                     """;
             default -> "Sorry error";
         };
-
-        return randomCard;
     }
 
 
