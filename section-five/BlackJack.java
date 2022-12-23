@@ -14,11 +14,11 @@ public class BlackJack {
 
         String upsideDownCard = """
                        _____
-                      |J    |
-                      | J J |
-                      |  J  |
-                      |  J  |
-                      |____J|
+                      |     |
+                      | DD  |
+                      | D D |
+                      | DD  |
+                      |_____|
                     """;
         System.out.println("and a card facing down \n" + upsideDownCard);
 
