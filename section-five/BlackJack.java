@@ -8,6 +8,7 @@ public class BlackJack {
         System.out.println("You get a \n" + playerCard1);
         String playerCard2 = randomCards();
         System.out.println("And a \n" + playerCard2);
+        int playerHand = cardNumber(playerCard1) + cardNumber(playerCard2);
 
         String dealerCard1 = randomCards();
         System.out.println("Dealer had a \n" + dealerCard1);
@@ -27,14 +28,14 @@ public class BlackJack {
         if(stickOrTwist.equals("t")) {
             String playerCard3 = randomCards();
             System.out.println("You got a \n" + playerCard3);
+            System.out.println("You have: " + (playerHand + cardNumber(playerCard3)));
         } else {
-            System.out.println("You stuck");
+            System.out.println("You stuck with: " + playerHand);
         }
 
 
-        System.out.println(cardNumber(playerCard1) + cardNumber(playerCard2));
-//        System.out.println(cardNumber(playerCard2));
-//        System.out.println(cardNumber(dealerCard1));
+
+
 
         scan.close();
     }
