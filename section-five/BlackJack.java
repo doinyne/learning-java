@@ -30,6 +30,11 @@ public class BlackJack {
         } else {
             System.out.println("You stuck");
         }
+
+
+        System.out.println(cardNumber(playerCard1));
+        System.out.println(cardNumber(playerCard2));
+        System.out.println(cardNumber(dealerCard1));
     }
 
     public static String randomCards() {
@@ -143,5 +148,114 @@ public class BlackJack {
                     """;
             default -> "Sorry error";
         };
+    }
+
+    public static int cardNumber(String randomCards) {
+
+        int cardWorth = switch (randomCards) {
+            case """
+                       _____
+                      |A _  |
+                      | ( ) |
+                      |(_'_)|
+                      |  |  |
+                      |____V|
+                    """ -> 1;
+            case """
+                       _____
+                      |2    |
+                      |  o  |
+                      |     |
+                      |  o  |
+                      |____Z|
+                    """ -> 2;
+            case """
+                       _____
+                      |3    |
+                      | o o |
+                      |     |
+                      |  o  |
+                      |____E|
+                    """ -> 3;
+            case """
+                       _____
+                      |4    |
+                      | o o |
+                      |     |
+                      | o o |
+                      |____h|
+                    """ -> 4;
+            case """
+                       _____\s
+                      |5    |
+                      | o o |
+                      |  o  |
+                      | o o |
+                      |____S|
+                    """ -> 5;
+            case """
+                       _____\s
+                      |6    |
+                      | o o |
+                      | o o |
+                      | o o |
+                      |____6|
+                    """ -> 6;
+            case """
+                       _____\s
+                      |7    |
+                      | o o |
+                      |o o o|
+                      | o o |
+                      |____7|
+                    """ -> 7;
+            case """
+                       _____\s
+                      |8    |
+                      |o o o|
+                      | o o |
+                      |o o o|
+                      |____8|
+                    """ -> 8;
+            case """
+                       _____\s
+                      |9    |
+                      |o o o|
+                      |o o o|
+                      |o o o|
+                      |____9|
+                    """ -> 9;
+            case """
+                       _____\s
+                      |10  o|
+                      |o o o|
+                      |o o o|
+                      |o o o|
+                      |___10|
+                    """, """
+                               _____\s
+                              |J  ww|
+                              | o {)|
+                              |o o% |
+                              | | % |
+                              |__%%[|
+                            """, """
+                                       _____
+                                      |Q  ww|
+                                      | o {(|
+                                      |o o%%|
+                                      | |%%%|
+                                      |_%%%O|
+                                    """, """
+                                               _____
+                                              |K  WW|
+                                              | o {)|
+                                              |o o%%|
+                                              | |%%%|
+                                              |_%%%>|
+                                            """ -> 10;
+            default -> 0;
+        };
+        return cardWorth;
     }
 }
