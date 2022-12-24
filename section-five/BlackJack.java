@@ -32,9 +32,9 @@ public class BlackJack {
         }
 
 
-        System.out.println(cardNumber(playerCard1));
-        System.out.println(cardNumber(playerCard2));
-        System.out.println(cardNumber(dealerCard1));
+        System.out.println(cardNumber(playerCard1) + cardNumber(playerCard2));
+//        System.out.println(cardNumber(playerCard2));
+//        System.out.println(cardNumber(dealerCard1));
 
         scan.close();
     }
