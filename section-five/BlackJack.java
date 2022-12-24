@@ -35,6 +35,8 @@ public class BlackJack {
         System.out.println(cardNumber(playerCard1));
         System.out.println(cardNumber(playerCard2));
         System.out.println(cardNumber(dealerCard1));
+
+        scan.close();
     }
 
     public static String randomCards() {
