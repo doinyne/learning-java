@@ -13,6 +13,8 @@ public class BlackJack {
         String playerCard4 = randomCards();
 
         String dealerCard1 = randomCards();
+        String dealerCard2 = randomCards();
+
         System.out.println("Dealer had a \n" + dealerCard1);
 
         String upsideDownCard = """
@@ -28,11 +30,12 @@ public class BlackJack {
         System.out.println("Would you like to stick or twist?\nPlease type s for stick and t for twist");
         String stickOrTwist = scan.nextLine();
         if(stickOrTwist.equals("t")) {
-
             System.out.println("You got a \n" + playerCard3);
             System.out.println("You have: " + (playerHand + cardNumber(playerCard3)));
+            System.out.println("s or t?");
         } else {
             System.out.println("You stuck with: " + playerHand);
+            System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
             System.exit(0);
         }
 
@@ -41,12 +44,14 @@ public class BlackJack {
         if(stickOrTwist2.equals("t")) {
             System.out.println("You got a \n" + playerCard4);
             System.out.println("You have: " + (playerHand + cardNumber(playerCard3) + cardNumber(playerCard4)));
+            System.out.println("s or t?");
         } else {
             System.out.println("You stuck with: " + (playerHand + cardNumber(playerCard3)));
+            System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
             System.exit(0);
         }
 
-
+        String stickOrTwist3 = scan.nextLine();
 
 
 
