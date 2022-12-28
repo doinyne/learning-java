@@ -11,9 +11,13 @@ public class BlackJack {
         int playerHand = cardNumber(playerCard1) + cardNumber(playerCard2);
         String playerCard3 = randomCards();
         String playerCard4 = randomCards();
+        String playerCard5 = randomCards();
 
         String dealerCard1 = randomCards();
         String dealerCard2 = randomCards();
+        String dealerCard3 = randomCards();
+        String dealerCard4 = randomCards();
+        String dealerCard5 = randomCards();
 
         System.out.println("Dealer had a \n" + dealerCard1);
 
@@ -29,6 +33,7 @@ public class BlackJack {
 
         System.out.println("Would you like to stick or twist?\nPlease type s for stick and t for twist");
         String stickOrTwist = scan.nextLine();
+
         if(stickOrTwist.equals("t")) {
             System.out.println("You got a \n" + playerCard3);
             System.out.println("You have: " + (playerHand + cardNumber(playerCard3)));
@@ -36,6 +41,16 @@ public class BlackJack {
         } else {
             System.out.println("You stuck with: " + playerHand);
             System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
+            if((cardNumber(dealerCard1) + cardNumber(dealerCard2)) <= 17) {
+                System.out.println((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3)));
+                if((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3)) <= 17) {
+                    System.out.println((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3) + cardNumber(dealerCard4)));
+                } else {
+                    System.out.println(((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3))));
+                }
+            } else {
+                System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
+            }
             System.exit(0);
         }
 
@@ -53,6 +68,15 @@ public class BlackJack {
 
         String stickOrTwist3 = scan.nextLine();
 
+        if(stickOrTwist3.equals("t")) {
+            System.out.println("You got a \n" + playerCard5);
+            System.out.println("You have: " + (playerHand + cardNumber(playerCard3) + cardNumber(playerCard4) + cardNumber(playerCard5)));
+            System.out.println("s or t?");
+        } else {
+            System.out.println("You stuck with: " + (playerHand + cardNumber(playerCard3) + cardNumber(playerCard4)));
+            System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
+            System.exit(0);
+        }
 
 
         scan.close();
@@ -279,4 +303,7 @@ public class BlackJack {
         };
         return cardWorth;
     }
+
 }
+
+
