@@ -1,9 +1,13 @@
 import java.util.Scanner;
 
 public class BlackJack {
-
+    public static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        System.out.println("\nWelcome to Deano Casino!");
+        System.out.println("You have selected to play BlackJack!");
+        System.out.println("...press anything to begin!");
+        scan.nextLine();
+
         //player cards
         int playerCard1 = randomCards();
         System.out.println("You get a \n" + playerCard1);
