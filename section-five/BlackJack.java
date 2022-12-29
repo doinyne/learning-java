@@ -10,9 +10,14 @@ public class BlackJack {
 
         //player cards
         int playerCard1 = randomCards();
-        System.out.println("You get a \n" + playerCard1);
         int playerCard2 = randomCards();
-        System.out.println("And a \n" + playerCard2);
+        System.out.println("You get a \n" + cardString(playerCard1) + "And a \n" + cardString(playerCard2));
+
+        //player total
+        int playerTotal = playerCard1 + playerCard2;
+        System.out.println("Your total is: " + playerTotal);
+
+
         int playerHand = playerCard1 + playerCard2;
         int playerCard3 = randomCards();
         int playerCard4 = randomCards();
