@@ -41,17 +41,7 @@ public class BlackJack {
         } else {
             System.out.println("You stuck with: " + playerHand);
             System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
-            if((cardNumber(dealerCard1) + cardNumber(dealerCard2)) <= 17) {
-                System.out.println((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3)));
-                if((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3)) <= 17) {
-                    System.out.println((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3) + cardNumber(dealerCard4)));
-                } else {
-                    System.out.println(((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3))));
-                }
-            } else {
-                System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
-            }
-            System.exit(0);
+            dealerHand(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
         }
 
         String stickOrTwist2 = scan.nextLine();
@@ -62,8 +52,7 @@ public class BlackJack {
             System.out.println("s or t?");
         } else {
             System.out.println("You stuck with: " + (playerHand + cardNumber(playerCard3)));
-            System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
-            System.exit(0);
+            dealerHand(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
         }
 
         String stickOrTwist3 = scan.nextLine();
@@ -74,8 +63,7 @@ public class BlackJack {
             System.out.println("s or t?");
         } else {
             System.out.println("You stuck with: " + (playerHand + cardNumber(playerCard3) + cardNumber(playerCard4)));
-            System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
-            System.exit(0);
+            dealerHand(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
         }
 
 
@@ -302,6 +290,20 @@ public class BlackJack {
             default -> 0;
         };
         return cardWorth;
+    }
+
+    public static void dealerHand(String dealerCard1, String dealerCard2, String dealerCard3, String dealerCard4, String dealerCard5) {
+        if((cardNumber(dealerCard1) + cardNumber(dealerCard2)) <= 17) {
+            System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3)));
+            if((cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3)) <= 17) {
+                System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3) + cardNumber(dealerCard4)));
+            } else {
+                System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2) + cardNumber(dealerCard3)));
+            }
+        } else {
+            System.out.println("The Dealer has: " + (cardNumber(dealerCard1) + cardNumber(dealerCard2)));
+        }
+        System.exit(0);
     }
 
 }
