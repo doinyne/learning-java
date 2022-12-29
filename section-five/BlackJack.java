@@ -37,17 +37,28 @@ public class BlackJack {
         int dealerTotal = Math.min(dealerCard1, 10) + Math.min(dealerCard2, 10);
 
         //game logic
-        String option = stickOrTwist();
 
-        int playerHand = playerCard1 + playerCard2;
-        int playerCard3 = randomCards();
-        int playerCard4 = randomCards();
-        int playerCard5 = randomCards();
 
-        int dealerCard3 = randomCards();
-        int dealerCard4 = randomCards();
-        int dealerCard5 = randomCards();
+        while (true) {
+            String option = stickOrTwist();
 
+            if(option.equalsIgnoreCase("stick")) {
+                break;
+            }
+
+            int newCard = randomCards();
+            playerTotal += Math.min(newCard, 10);
+            System.out.println("\nYou get a\n" + cardString(newCard));
+            System.out.println("Your total is " + playerTotal);
+
+            if(playerTotal > 21) {
+                System.out.println("You bust!");
+                System.exit(0);
+            }
+        }
+
+        System.out.println("\nThe dealer's card are \n " + cardString(dealerCard1) + "\n and a \n" + cardString(dealerCard2));
+        scan.close();
     }
 
     public static int randomCards() {
