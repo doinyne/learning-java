@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class BlackJack {
     public static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
+
+        //welcome message
         System.out.println("\nWelcome to Deano Casino!");
         System.out.println("You have selected to play BlackJack!");
         System.out.println("...press anything to begin!");
@@ -14,7 +16,7 @@ public class BlackJack {
         System.out.println("You get a \n" + cardString(playerCard1) + "And a \n" + cardString(playerCard2));
 
         //player total
-        int playerTotal = playerCard1 + playerCard2;
+        int playerTotal = Math.min(playerCard1, 10) + Math.min(playerCard2, 10);
         System.out.println("Your total is: " + playerTotal);
 
 
