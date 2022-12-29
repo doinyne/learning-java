@@ -31,10 +31,13 @@ public class BlackJack {
         //dealer cards
         int dealerCard1 = randomCards();
         int dealerCard2 = randomCards();
-        System.out.println("Dealer got a \n" + cardString(playerCard1) + "And a \n" + upsideDownCard);
+        System.out.println("Dealer shows a \n" + cardString(playerCard1) + "And has a card facing down \n" + upsideDownCard);
 
         //dealer total
         int dealerTotal = Math.min(dealerCard1, 10) + Math.min(dealerCard2, 10);
+
+        //game logic
+        String option = stickOrTwist();
 
         int playerHand = playerCard1 + playerCard2;
         int playerCard3 = randomCards();
@@ -45,43 +48,6 @@ public class BlackJack {
         int dealerCard4 = randomCards();
         int dealerCard5 = randomCards();
 
-        System.out.println("Would you like to stick or twist?\nPlease type s for stick and t for twist");
-        String stickOrTwist = scan.nextLine();
-
-        if(stickOrTwist.equals("t")) {
-            System.out.println("You got a \n" + playerCard3);
-            System.out.println("You have: " + (playerHand + playerCard3));
-            System.out.println("s or t?");
-        } else {
-            System.out.println("You stuck with: " + playerHand);
-            System.out.println("The Dealer has: " + (dealerCard1 + dealerCard2));
-            dealerHand(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
-        }
-
-        String stickOrTwist2 = scan.nextLine();
-
-        if(stickOrTwist2.equals("t")) {
-            System.out.println("You got a \n" + playerCard4);
-            System.out.println("You have: " + (playerHand + playerCard3 + playerCard4));
-            System.out.println("s or t?");
-        } else {
-            System.out.println("You stuck with: " + (playerHand + playerCard3));
-            dealerHand(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
-        }
-
-        String stickOrTwist3 = scan.nextLine();
-
-        if(stickOrTwist3.equals("t")) {
-            System.out.println("You got a \n" + playerCard5);
-            System.out.println("You have: " + (playerHand + playerCard3 + playerCard4 + playerCard5));
-            System.out.println("s or t?");
-        } else {
-            System.out.println("You stuck with: " + (playerHand + playerCard3 + playerCard4));
-            dealerHand(dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5);
-        }
-
-
-        scan.close();
     }
 
     public static int randomCards() {
@@ -199,19 +165,15 @@ public class BlackJack {
         };
     }
 
+    public static String stickOrTwist() {
+        System.out.println("Would you like to stick or twist?");
+        String response = scan.nextLine();
 
-    public static void dealerHand(int dealerCard1, int dealerCard2, int dealerCard3, int dealerCard4, int dealerCard5) {
-        if((dealerCard1 + dealerCard2) <= 17) {
-            System.out.println("The Dealer has: " + (dealerCard1 + dealerCard2 + dealerCard3));
-            if((dealerCard1 + dealerCard2 + dealerCard3) <= 17) {
-                System.out.println("The Dealer has: " + (dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4));
-            } else {
-                System.out.println("The Dealer has: " + (dealerCard1 + dealerCard2 + dealerCard3));
-            }
-        } else {
-            System.out.println("The Dealer has: " + (dealerCard1 + dealerCard2));
+        while(!(response.equalsIgnoreCase("twist") || response.equalsIgnoreCase("stick"))) {
+            System.out.println("Please type 'stick' or 'twist'");
+            response = scan.nextLine();
         }
-        System.exit(0);
+        return response;
     }
 
 }
