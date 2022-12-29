@@ -10,6 +10,15 @@ public class BlackJack {
         System.out.println("...press anything to begin!");
         scan.nextLine();
 
+        String upsideDownCard = """
+                       _____
+                      |     |
+                      | DD  |
+                      | D D |
+                      | DD  |
+                      |_____|
+                    """;
+
         //player cards
         int playerCard1 = randomCards();
         int playerCard2 = randomCards();
@@ -19,29 +28,22 @@ public class BlackJack {
         int playerTotal = Math.min(playerCard1, 10) + Math.min(playerCard2, 10);
         System.out.println("Your total is: " + playerTotal);
 
+        //dealer cards
+        int dealerCard1 = randomCards();
+        int dealerCard2 = randomCards();
+        System.out.println("Dealer got a \n" + cardString(playerCard1) + "And a \n" + upsideDownCard);
+
+        //dealer total
+        int dealerTotal = Math.min(dealerCard1, 10) + Math.min(dealerCard2, 10);
 
         int playerHand = playerCard1 + playerCard2;
         int playerCard3 = randomCards();
         int playerCard4 = randomCards();
         int playerCard5 = randomCards();
 
-        int dealerCard1 = randomCards();
-        int dealerCard2 = randomCards();
         int dealerCard3 = randomCards();
         int dealerCard4 = randomCards();
         int dealerCard5 = randomCards();
-
-        System.out.println("Dealer had a \n" + dealerCard1);
-
-        String upsideDownCard = """
-                       _____
-                      |     |
-                      | DD  |
-                      | D D |
-                      | DD  |
-                      |_____|
-                    """;
-        System.out.println("and a card facing down \n" + upsideDownCard);
 
         System.out.println("Would you like to stick or twist?\nPlease type s for stick and t for twist");
         String stickOrTwist = scan.nextLine();
