@@ -37,8 +37,6 @@ public class BlackJack {
         int dealerTotal = Math.min(dealerCard1, 10) + Math.min(dealerCard2, 10);
 
         //game logic
-
-
         while (true) {
             String option = stickOrTwist();
 
@@ -57,7 +55,27 @@ public class BlackJack {
             }
         }
 
-        System.out.println("\nThe dealer's card are \n " + cardString(dealerCard1) + "\n and a \n" + cardString(dealerCard2));
+        System.out.println("\nThe dealer's cards are \n" + cardString(dealerCard1) + "\n and a \n" + cardString(dealerCard2));
+
+        while(dealerTotal <= 17) {
+            int newCard = randomCards();
+
+            dealerTotal += Math.min(newCard, 10);
+            System.out.println("\nDealer gets a \n" + cardString(newCard));
+            System.out.println("Dealers total is " + dealerTotal);
+        }
+
+        if(dealerTotal > 21) {
+            System.out.println("Dealer bust!");
+            System.exit(0);
+        }
+
+        if(playerTotal > dealerTotal) {
+            System.out.println("You win!");
+        } else {
+            System.out.println("Dealer wins!");
+        }
+
         scan.close();
     }
 
