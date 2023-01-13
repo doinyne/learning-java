@@ -4,11 +4,11 @@ public class RingAnnouncer {
         int win = 0;
         int losses = 0;
 
-        for(int i = 0; i < record.length; i++) {
-            if(record[i].equals("WIN")){
+        for (String s : record) {
+            if (s.equals("WIN")) {
                 win++;
             } else {
-                losses ++;
+                losses++;
             }
         }
         System.out.println("With a professional record of " + win + " wins and " + losses + " losses.");
