@@ -1,7 +1,8 @@
+@SuppressWarnings("ALL")
 public class AreaCalculator {
 
   static double side = 2;
-  static double lenght = 1;
+  static double length = 1;
   static double width = 2;
   static double base = 1;
   static double height = 2;
@@ -48,7 +49,7 @@ public class AreaCalculator {
 
   public static void printAreas() {
     areaSquare(side);
-    areaRectangle(lenght, width);
+    areaRectangle(length, width);
     areaTriangle(base, height);
     areaCircle(radius);
   }

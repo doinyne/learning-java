@@ -2,14 +2,15 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/section-five">
-      <sourceFolder url="file://$MODULE_DIR$/section-five" isTestSource="false" />
-    </content>
+    <content url="file://$MODULE_DIR$/section-five" />
     <content url="file://$MODULE_DIR$/section-four">
       <sourceFolder url="file://$MODULE_DIR$/section-four" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/section-one">
       <sourceFolder url="file://$MODULE_DIR$/section-one" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/section-six">
+      <sourceFolder url="file://$MODULE_DIR$/section-six" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/section-three">
       <sourceFolder url="file://$MODULE_DIR$/section-three/challenge3" isTestSource="false" />
