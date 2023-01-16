@@ -14,7 +14,7 @@ public class WeatherTwo {
         }
         return fahren;
     }
-    //work this out on your own, dont use the workbook!
+    //work this out on your own, don't use the workbook!
     public static double printTemperatures(double[] fahrenheit, String Fahrenheit) {
         System.out.print(Fahrenheit + ": ");
         for(int i = 0; 0 < fahrenheit.length; i++) {
