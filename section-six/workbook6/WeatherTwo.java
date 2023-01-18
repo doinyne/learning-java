@@ -4,7 +4,8 @@ public class WeatherTwo {
     public static void main(String[] args) {
         double[] celsius = {12.5, 14.5, 17.0, 21.0, 23.0, 18.5, 20.0};
         double[] fahrenheit = celciusToFahrenheit(celsius);
-        System.out.println(printTemperatures(fahrenheit, Arrays.toString(fahrenheit)));
+        printTemperatures(celsius, "Celsius");
+        printTemperatures(fahrenheit, "Fahrenheit");
     }
 
     public static double[] celciusToFahrenheit(double[] celsius) {
@@ -14,12 +15,13 @@ public class WeatherTwo {
         }
         return fahren;
     }
-    //work this out on your own, don't use the workbook!
-    public static double printTemperatures(double[] fahrenheit, String Fahrenheit) {
-        System.out.print(Fahrenheit + ": ");
-        for(int i = 0; 0 < fahrenheit.length; i++) {
+
+    public static void printTemperatures(double[] temp, String tempType) {
+        System.out.print(tempType + ": ");
+        for(int i = 0; i < temp.length; i++) {
+            System.out.print(temp[i] + " ");
 
         }
-        return something;
+        System.out.println("\n");
     }
 }
