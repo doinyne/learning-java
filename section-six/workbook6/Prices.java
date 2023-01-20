@@ -8,9 +8,9 @@ public class Prices {
         for(int i = 0; i < prices.length; i++) {
 
             switch (i) {
-                case 0 -> System.out.print("\tSomeone: ");
-                case 1 -> System.out.print("\tSomeone: ");
-                case 2 -> System.out.print("\tSomeone: ");
+                case 0 -> System.out.print("\tBaking: ");
+                case 1 -> System.out.print("\tBeverage: ");
+                case 2 -> System.out.print("\tCereals: ");
             }
 
             for(int j = 0; j < prices[i].length; j++) {
