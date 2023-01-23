@@ -9,22 +9,32 @@ public class Javapedia {
         scan.nextLine();
 
         String[][] database = new String[userInput][3];
-        System.out.println(Arrays.deepToString(database));
-        System.out.println("database index 0 length = " + database[0].length);
-        System.out.println("database array length = " + database.length);
 
         enterInfo(database);
+
+//        System.out.println("Name: " + database[0][0]);
+//        System.out.println("DOB: " + database[0][1]);
+//        System.out.println("Occupancy: " + database[0][2]);
+
 
         scan.close();
     }
 
     public static void enterInfo(String[][] array) {
         Scanner scan = new Scanner(System.in);
-        for(int i = 0; i <= array.length; i++) { //3
-            for(int j = 0; j < array[i].length; j++) { // user input
-                array[i][j] = scan.nextLine();
-            }
-            System.out.println("\n");
+        int figureNumber = 1;
+        String[] newArray = new String[array.length];
+        System.out.println(Arrays.deepToString(array));
+        for(int i = 0; i <= array.length -1; i++) {
+            newArray[i] = Arrays.toString(array[i]);
+            System.out.println("Figure " + figureNumber++);
+            System.out.print("Name > ");
+            String Name = scan.nextLine();
+            newArray[i] =
+            System.out.print("DOB > ");
+            String dob = scan.nextLine();
+            System.out.print("Occupancy: ");
+            String occupancy = scan.nextLine();
         }
         System.out.println(Arrays.deepToString(array));
     }
