@@ -27,12 +27,12 @@ public class Javapedia {
 
         }
         System.out.println("These are the values you stored: " + Arrays.deepToString(database));
-
+        System.out.println(database.length);
         System.out.print("Would you like some more information? ");
         String userQuery = scan.nextLine();
         for(int i = 0; i < database.length; i++) {
-            if(database[i].equals(userQuery)) {
-                System.out.println(database[i]);
+            if(userQuery.equals(database[i][0])) {
+                System.out.println(Arrays.toString(database[i]));
             }
         }
     }
