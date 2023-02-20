@@ -3,10 +3,7 @@ import java.util.*;
 
 public class Javapedia {
     public static void main(String[] args) {
-
         enterInfo();
-
-
     }
 
     public static void enterInfo() {
@@ -20,14 +17,23 @@ public class Javapedia {
         for(int i = 0; i < database.length; i++) {
             System.out.println("Figure " + (i + 1));
             for(int j = 0; j < 1; j++) {
-                System.out.print("Name: ");
+                System.out.print("* Name: ");
                 database[i][0] = scan.nextLine();
-                System.out.print("dob: ");
+                System.out.print("* dob: ");
                 database[i][1] = scan.nextLine();
-                System.out.print("Occupation: ");
+                System.out.print("* Occupation: ");
                 database[i][2] = scan.nextLine();
             }
-            System.out.println(Arrays.deepToString(database));
+
+        }
+        System.out.println("These are the values you stored: " + Arrays.deepToString(database));
+
+        System.out.print("Would you like some more information? ");
+        String userQuery = scan.nextLine();
+        for(int i = 0; i < database.length; i++) {
+            if(database[i].equals(userQuery)) {
+                System.out.println(database[i]);
+            }
         }
     }
 
