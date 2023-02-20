@@ -32,7 +32,9 @@ public class Javapedia {
         String userQuery = scan.nextLine();
         for(int i = 0; i < database.length; i++) {
             if(userQuery.equals(database[i][0])) {
-                System.out.println(Arrays.toString(database[i]));
+                System.out.print("Name: " + database[i][0] + " ");
+                System.out.print("dob: " + database[i][1] + " ");
+                System.out.print("Occupation: " + database[i][2] + " ");
             }
         }
     }
